@@ -74,5 +74,30 @@ export class RoleService extends Construct {
             }),
         )
 
+
+        // ****************************************** Inline Policy 3 ******************************************
+        // 👇 attach an Inline Policy to role
+        this.role.attachInlinePolicy(
+            new iam.Policy(this, 'InlineSTS_Access_Policy', {
+                policyName: 'STS_Access_Policy',
+                statements: [
+                    new iam.PolicyStatement({
+                        effect: iam.Effect.ALLOW,
+                        actions: [
+                            "sts:AssumeRole",
+                            "sts:GetAccessKeyInfo",
+                            "sts:GetSessionToken",
+                            "sts:TagSession"
+                        ],
+                        resources: [
+                            "arn:aws:iam::816692805244:role/ProdAccount-Lambda-Assume-Role",
+                            "arn:aws:iam::202826083799:role/ProdAccount-Lambda-Assume-Role",
+                            "arn:aws:iam::682073460734:role/ProdAccount-Lambda-Assume-Role"
+                        ],
+                    })
+                ],
+            }),
+        )
+
     }
 }
