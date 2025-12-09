@@ -65,7 +65,17 @@ def get_regions():
     return regions
 
 def get_combined_status(table_body, credentials, accountname):
-    table_body += f'<tr><th bgcolor="#82FF82" colspan="5">{accountname} EC2 and RDS Instances</th></tr>\n'
+    # Light green header for all environments
+    header_color = '#90EE90'
+
+    # Apply color to <tr> and <th> with inline style
+    table_body += (
+        f'<tr style="background-color:{header_color};">'
+        f'<th colspan="5" style="background-color:{header_color};">{accountname} EC2 and RDS Instances</th>'
+        f'</tr>\n'
+    )
+
+    # Column headers
     table_body += '<tr><th>Region</th><th>EC2 Running</th><th>EC2 Stopped</th><th>RDS Running</th><th>RDS Stopped</th></tr>\n'
 
     regions = get_regions()
