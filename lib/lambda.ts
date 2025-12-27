@@ -9,6 +9,7 @@ import * as events from 'aws-cdk-lib/aws-events'
 import * as ec2 from 'aws-cdk-lib/aws-ec2';
 import {IRole} from "aws-cdk-lib/aws-iam";
 import {ISecurityGroup, IVpc} from "aws-cdk-lib/aws-ec2";
+import * as logs from "aws-cdk-lib/aws-logs";
 
 
 export interface lambdaServiceProps {
@@ -36,8 +37,8 @@ export class lambdaService extends Construct {
             code: lambda.Code.fromAsset("lambdacode/latest"),
             role: props.role,
             // 👇 place lambda in VPC and Private Subnets
-            vpc: props.VPCandSUBs,
-            securityGroups: [props.sg],
+            // vpc: props.VPCandSUBs,
+            // securityGroups: [props.sg],
             environment: {
                 accounts: props.map.findInMap(String(props.environment), 'accounts'),
                 recipients: props.map.findInMap(String(props.environment), 'recipients'),

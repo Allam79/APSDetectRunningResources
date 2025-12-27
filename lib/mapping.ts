@@ -36,8 +36,8 @@ export class StackMaps {
                 VPCName: "Fort",
                 PrivateSubnetA: "subnet-00d0e7fdfd25b42da",
                 PrivateSubnetB: "subnet-0e9f78f5e5ebaee40",
-                accounts: "{\"Production\": \"578084145834\", \"Staging\": \"816692805244\", \"Integration\": \"682073460734\", \"aps-fort-dev\": \"202826083799\"}",
-                recipients: "jallam@amazon.com",
+                accounts: "{\"Production\": \"578084145834\", \"Staging\": \"816692805244\", \"Integration\": \"682073460734\", \"aps-fort-dev\": \"202826083799\", \"APS-RDS-DB-Backup-Prod\": \"036486531306\"}",
+                recipients: "aps-core-infra@amazon.com",
                 TimeHour: '00',
                 TimeMinute: '00',
               }
