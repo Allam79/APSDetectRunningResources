@@ -92,7 +92,8 @@ export class RoleService extends Construct {
                         resources: [
                             "arn:aws:iam::816692805244:role/ProdAccount-Lambda-Assume-Role",
                             "arn:aws:iam::202826083799:role/ProdAccount-Lambda-Assume-Role",
-                            "arn:aws:iam::682073460734:role/ProdAccount-Lambda-Assume-Role"
+                            "arn:aws:iam::682073460734:role/ProdAccount-Lambda-Assume-Role",
+                            "arn:aws:iam::036486531306:role/ProdAccount-Lambda-Assume-Role"
                         ],
                     })
                 ],
